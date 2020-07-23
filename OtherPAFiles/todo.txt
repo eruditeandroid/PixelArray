@@ -1,0 +1,23 @@
+To-Do for Pixel Array
+MUST:
+- "Improve the scalability of our implementation of the Pixel Array method"
+- "Validate and test our Pixel Array code so that it can be made publicly available"
+NEW FEATURES:
+- Make it possible to translate problems from arbitrary networks to Pixel Array format
+    - Probably making use of MetaGraphs.jl
+    - Need some way to specify equations at each node in a generic form
+- Automatic TikZification or plotting of wiring diagrams
+- Work with arbitrary semirings? (if we see a good reason to)
+EFFICIENCY:
+- Implement Dijkstra-like (or A*) algorithm to find efficient clusterings
+    - Nodes = sequences of merges, edges = adding a merge to the end of a sequence
+    - Cost = time complexity added when traveling along an edge
+    - Heuristic for A*: time complexity of finishing the multiplication right there?
+- Look into how we’re clustering trees: is there a better way? What’s the optimal head choice?
+- Exploit sparsity
+CLEANUP:
+- Find some way to have the same variable in two ports for the same pack
+    - Current implementation assumes this is not the case
+    - Might have to change interaction with objects more than objects themselves
+- Maybe change “Port” to “Variable” or something, since we’re treating them as if they’re shared between packs (i.e. more as variables than as ports)
+- Make dynamic plotting smarter / easier to use
